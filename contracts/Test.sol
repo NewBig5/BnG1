@@ -8,7 +8,11 @@ import "./Bn128G1.sol";
 
 contract Test is Bn128G1  {
     uint public count;
-    
+    function Batch(uint256 a) public {
+        for(uint i; i<8; i++) {
+            aG(a);
+        }
+    }
     function aG(uint256 a) public returns (uint256, uint256) {
         count++;
         return ecmul(getGx(), getGy(), a);
